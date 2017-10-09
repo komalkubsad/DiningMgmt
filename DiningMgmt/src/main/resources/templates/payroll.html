@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html   xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+  <title>Dining Management System</title>
+  
+</head>
+<body>
+
+                <form role="form" th:action="@{/payroll}" th:object="${payroll}" th:method="post">
+    
+        <div class="container">
+
+          <div class="col-xs-12 text-xs-center">
+                    <h3 class="mbr-section-title display-2">PAYROLL</h3>
+                    <small class="mbr-section-subtitle"></small>
+                </div>
+            <div class="row row-sm-offset">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="form1-4-name">Name<span class="form-asterisk">*</span></label>
+                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{employeeName}"/>
+                                </div>
+                            </div>
+                        </div>
+                 <div class="row row-sm-offset">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="form1-4-name">Date Of Joining<span class="form-asterisk">*</span></label>
+                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{dateOfJoining}"/>
+                                </div>
+                            </div>
+                        </div>
+                 <div class="row row-sm-offset">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="form1-4-name">Pay Per Hour<span class="form-asterisk">*</span></label>
+                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{payPerHour}"/>
+                                </div>
+                            </div>
+                        </div>
+                 <div class="row row-sm-offset">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="form1-4-name">Working hours<span class="form-asterisk">*</span></label>
+                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{workingHours}"/>
+                                </div>
+                            </div>
+                        </div>
+            <div class="row row-sm-offset">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="form1-4-name">Total Pay<span class="form-asterisk">*</span></label>
+                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{totalPay}"/>
+                                </div>
+                            </div>
+                        </div>
+            <div class="row row-sm-offset">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="form1-4-name">Status<span class="form-asterisk">*</span></label>
+                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{status}"/>
+                                </div>
+                            </div>
+                        </div>
+            <div class="row row-sm-offset">
+
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                  
+                                   <button type="submit" class="btn btn-primary"><span class="btn-text">SUBMIT</span><i class="btn-loader"></i></button>
+                                </div>
+                            </div>
+
+                            
+
+                            
+
+                        </div>
+            
+
+        </div>
+                </form>
+
+
+
+
+
+  </body>
+</html>
