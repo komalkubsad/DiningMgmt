@@ -13,5 +13,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author komalkubsad
  */
 public interface PayrollRepository extends JpaRepository<Payroll, Long> {
+
     
 }
