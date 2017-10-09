@@ -5,8 +5,8 @@
  */
 package edu.uncg.dining.mgmt.controllers;
 
-import edu.uncg.dining.mgmt.models.Payroll;
-import edu.uncg.dining.mgmt.repositories.PayrollRepository;
+import edu.uncg.dining.mgmt.models.Interview;
+import edu.uncg.dining.mgmt.repositories.InterviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,30 +18,32 @@ import org.springframework.web.bind.annotation.PostMapping;
  *
  * @author shrav
  */
-@Controller
-public class PayrollController {
+ @Controller
+public class InterviewController {
+   
     @Autowired
-    private PayrollRepository payrollRepo;
+    private InterviewRepository interviewRepo;
     
-    @PostMapping("/payroll")
-    public void save(Payroll payroll){
+    @PostMapping("/interview")
+    public void save(Interview interview){
                 System.out.println("Saving...");
-                payrollRepo.save(payroll);                        
+                interviewRepo.save(interview);                        
                         
     }
     
-    @GetMapping("/payroll")
+    @GetMapping("/interview")
     public String show (Model model){
-        model.addAttribute("payroll", new Payroll());
-        return "payroll";
+        model.addAttribute("interview", new Interview());
+        return "interview";
     }
     
-       @GetMapping("/payroll/{payrollId}")
-    public String show (Model model,@PathVariable long payrollId){
-        Payroll payroll=payrollRepo.findOne(payrollId);
-        model.addAttribute("payroll", payroll);
-        return "payroll";
+       @GetMapping("/interview/{interviewId}")
+    public String show (Model model,@PathVariable long interviewId){
+        Interview interview=interviewRepo.findOne(interviewId);
+        model.addAttribute("interview", interview);
+        return "interview";
     }
   
     
 }
+
