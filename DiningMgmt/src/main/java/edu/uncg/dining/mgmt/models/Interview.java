@@ -27,6 +27,15 @@ public class Interview {
     private int interviewDate;
     private String selectionStatus;
 
+    public Long getInterviewId() {
+        return interviewId;
+    }
+
+    public void setInterviewId(Long interviewId) {
+        this.interviewId = interviewId;
+    }
+    
+    
     public String getCandidateName() {
         return candidateName;
     }
