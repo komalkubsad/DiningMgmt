@@ -21,7 +21,7 @@ public class Menu {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int dayId;
+    private long dayId;
     private String day;
     private String item1;
     private String item2;
@@ -30,11 +30,11 @@ public class Menu {
     private String item5;
     
 
-    public int getDayId() {
+    public long getDayId() {
         return dayId;
     }
 
-    public void setDayId(int dayId) {
+    public void setDayId(long dayId) {
         this.dayId = dayId;
     }
 

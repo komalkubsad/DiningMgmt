@@ -22,15 +22,15 @@ public class Stock {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     
-    private int itemId;
+    private long itemId;
     private String item;
     private int quantity;
 
-    public int getItemId() {
+    public long getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(long itemId) {
         this.itemId = itemId;
     }
 

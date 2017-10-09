@@ -16,16 +16,24 @@ import javax.persistence.Table;
  * @author komalkubsad
  */
 @Entity
-@Table (name = "student")
-public class Student {
+@Table (name = "customize")
+public class Customize {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     
+    private long customID;
     private long studentId;
     private String studentName;
-    private String mealPlan;
-    private int startDate;
-    private int endDate;
+    private String item;
+    private String dayOfSpeacial;
+
+    public long getCustomID() {
+        return customID;
+    }
+
+    public void setCustomID(long customID) {
+        this.customID = customID;
+    }
 
     public long getStudentId() {
         return studentId;
@@ -43,29 +51,22 @@ public class Student {
         this.studentName = studentName;
     }
 
-    public String getMealPlan() {
-        return mealPlan;
+    public String getItem() {
+        return item;
     }
 
-    public void setMealPlan(String mealPlan) {
-        this.mealPlan = mealPlan;
+    public void setItem(String item) {
+        this.item = item;
     }
 
-    public int getStartDate() {
-        return startDate;
+    public String getDayOfSpeacial() {
+        return dayOfSpeacial;
     }
 
-    public void setStartDate(int startDate) {
-        this.startDate = startDate;
+    public void setDayOfSpeacial(String dayOfSpeacial) {
+        this.dayOfSpeacial = dayOfSpeacial;
     }
-
-    public int getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(int endDate) {
-        this.endDate = endDate;
-    }
+    
     
     
     
