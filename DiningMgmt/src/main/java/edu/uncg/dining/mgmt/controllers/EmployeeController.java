@@ -37,8 +37,8 @@ public class EmployeeController{
         model.addAttribute("employee", new Employee());
         return "employee";
     }
-    
-       @GetMapping("/employee/{employeeId}")
+
+       @GetMapping("/employee/{empId}")
     public String show (Model model,@PathVariable long empId){
         Employee employee=employeeRepo.findOne(empId);
         model.addAttribute("employee", employee);

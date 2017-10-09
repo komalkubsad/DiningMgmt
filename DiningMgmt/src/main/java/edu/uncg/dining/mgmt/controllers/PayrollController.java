@@ -26,9 +26,7 @@ public class PayrollController {
     @PostMapping("/payroll")
     public void save(Payroll payroll){
                 System.out.println("Saving...");
-                payrollRepo.save(payroll);
-                        
-                        
+                payrollRepo.save(payroll);                        
                         
     }
     

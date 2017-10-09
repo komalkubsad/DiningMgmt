@@ -20,6 +20,7 @@ import javax.persistence.Table;
 public class Payroll {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private long payrollId;
     private long employeeId;
     private String employeeName;
     private int dateOfJoining;
@@ -83,7 +84,13 @@ public class Payroll {
     public void setStatus(int status) {
         this.status = status;
     }
-    
-    
-    
+
+    public long getPayrollId() {
+        return payrollId;
+    }
+
+    public void setPayrollId(long payrollId) {
+        this.payrollId = payrollId;
+    }
+        
 }
