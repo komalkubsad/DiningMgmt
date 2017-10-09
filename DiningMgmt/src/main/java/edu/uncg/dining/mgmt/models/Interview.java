@@ -6,6 +6,9 @@
 package edu.uncg.dining.mgmt.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -16,7 +19,9 @@ import javax.persistence.Table;
 @Table (name = "Interview")
 public class Interview {
     
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long interviewId;
     private String candidateName;
     private int interviewTime;
     private int interviewDate;
