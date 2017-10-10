@@ -25,7 +25,7 @@ public class Customize {
     private long studentId;
     private String studentName;
     private String item;
-    private String dayOfSpeacial;
+    private String dayOfSpecial;
 
     public long getCustomID() {
         return customID;
@@ -59,12 +59,12 @@ public class Customize {
         this.item = item;
     }
 
-    public String getDayOfSpeacial() {
-        return dayOfSpeacial;
+    public String getDayOfSpecial() {
+        return dayOfSpecial;
     }
 
-    public void setDayOfSpeacial(String dayOfSpeacial) {
-        this.dayOfSpeacial = dayOfSpeacial;
+    public void setDayOfSpeacial(String dayOfSpecial) {
+        this.dayOfSpecial = dayOfSpecial;
     }
     
     
