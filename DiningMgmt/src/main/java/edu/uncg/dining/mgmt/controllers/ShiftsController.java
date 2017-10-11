@@ -33,13 +33,13 @@ public class ShiftsController {
     
     @GetMapping("/shifts")
     public String show (Model model){
-        model.addAttribute("shifts", new ShiftsController());
+        model.addAttribute("shifts", new Shifts());
         return "shifts";
     }
     
-       @GetMapping("/shifts/{shiftsId}")
-    public String show (Model model,@PathVariable long shiftsId){
-        Shifts shifts=shiftsRepo.findOne(shiftsId);
+       @GetMapping("/shifts/{shiftId}")
+    public String show (Model model,@PathVariable long shiftId){
+        Shifts shifts=shiftsRepo.findOne(shiftId);
         model.addAttribute("shifts", shifts);
         return "shifts";
     }

@@ -5,10 +5,10 @@
  */
 package edu.uncg.dining.mgmt.controllers;
 
-import edu.uncg.dining.mgmt.models.Employee;
+import edu.uncg.dining.mgmt.models.Customize;
+import edu.uncg.dining.mgmt.models.Interview;
 import edu.uncg.dining.mgmt.models.Menu;
-import edu.uncg.dining.mgmt.repositories.EmployeeRepository;
-import edu.uncg.dining.mgmt.repositories.MenuRepository;
+import edu.uncg.dining.mgmt.repositories.CustomizeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,30 +21,15 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @author komalkubsad
  */
 @Controller
-public class MenuController {
-    @Autowired
-    private MenuRepository menuRepo;
+public class MainpageController {
+  
     
-    @PostMapping("/menu")
-    public void save(Menu menu){
-                System.out.println("Saving...");
-                menuRepo.save(menu);
-                        
-                        
-                        
-    }
-    
-    @GetMapping("/menu")
+    @GetMapping("/")
     public String show (Model model){
         model.addAttribute("menu", new Menu());
-        return "menu";
+        return "mainpage";
     }
-
-       @GetMapping("/menu/{menuId}")
-    public String show (Model model,@PathVariable long menuId){
-        Menu menu=menuRepo.findOne(menuId);
-        model.addAttribute("menu", menu);
-        return "employee";
-    }
+    
+  
     
 }
