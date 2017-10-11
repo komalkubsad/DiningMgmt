@@ -37,7 +37,8 @@ public class ShiftsController {
         return "shifts";
     }
     
-       @GetMapping("/shifts/{shiftId}")
+
+       @GetMapping("/shifts/{shiftsId}")
     public String show (Model model,@PathVariable long shiftId){
         Shifts shifts=shiftsRepo.findOne(shiftId);
         model.addAttribute("shifts", shifts);
