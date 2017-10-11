@@ -36,7 +36,7 @@ public class MenuController {
     
     @GetMapping("/menu")
     public String show (Model model){
-        model.addAttribute("menu", new Employee());
+        model.addAttribute("menu", new Menu());
         return "menu";
     }
 
