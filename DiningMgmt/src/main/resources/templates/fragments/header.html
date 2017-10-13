@@ -18,8 +18,22 @@
                 <li class="nav-item px-lg-4">
                     <a class="nav-link text-uppercase text-expanded" th:href="@{/student}">Sign Up</a>
                 </li>
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" th:href="@{/studentlogin}">Login</a>
+                <li class="dropdown">
+                    <a class="nav-link text-uppercase text-expanded"  data-toggle="dropdown" href="#">Login</a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item px-lg-4">
+                            <a class="nav-link text-uppercase text-expanded" th:href="@{/student}">Admin</a>
+                        </li>
+                        <li class="nav-item px-lg-4">
+                            <a class="nav-link text-uppercase text-expanded" th:href="@{/student}">Employee</a>
+                        </li>
+                        <li class="nav-item px-lg-4">
+                            <a class="nav-link text-uppercase text-expanded" th:href="@{/student}">Student</a>
+                        </li>
+
+
+
+                    </ul>
                 </li>
             </ul>
         </div>
