@@ -7,6 +7,7 @@ package edu.uncg.dining.mgmt.controllers;
 
 import edu.uncg.dining.mgmt.models.Interview;
 import edu.uncg.dining.mgmt.repositories.InterviewRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,10 +26,10 @@ public class InterviewController {
     private InterviewRepository interviewRepo;
     
     @PostMapping("/interview")
-    public void save(Interview interview){
+    public String save(Interview interview){
                 System.out.println("Saving...");
                 interviewRepo.save(interview);                        
-                        
+                return "redirect:/interviews";         
     }
     
     @GetMapping("/interview")
@@ -43,7 +44,13 @@ public class InterviewController {
         model.addAttribute("interview", interview);
         return "interview";
     }
-  
+   
+        @GetMapping("/interviews")
+    public String showAllInterviews (Model model){ 
+        final List<Interview> allInterviews = interviewRepo.findAll();
+        model.addAttribute("Interviews",allInterviews);
+        return "interview_display";
+    }
     
 }
 
