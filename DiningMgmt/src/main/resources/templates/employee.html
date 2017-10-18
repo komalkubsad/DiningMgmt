@@ -26,7 +26,7 @@
                 <form role="form" th:action="@{/employee}" th:object="${employee}" th:method="post">
     
 <!-- Navigation -->
-<div th:include="fragments/header::head"></div>
+   <div th:include="fragments/manager_header::manager_head"></div>
 <div class="bg-faded p-4 my-4">
         <div class="container">
 
@@ -54,7 +54,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Contact<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{address}"/>
+                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{contact}"/>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Email<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{address}"/>
+                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{email}"/>
                                 </div>
                             </div>
                         </div>
