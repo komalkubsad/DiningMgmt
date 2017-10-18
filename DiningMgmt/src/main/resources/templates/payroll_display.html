@@ -1,16 +1,105 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
+
+
+
+        <!-- Custom fonts for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"/>
+
+        <!-- Custom styles for this template -->
+        <link href="css/custom.css" rel="stylesheet"/>
+
     </head>
     <body>
-        <div>TODO write content</div>
+
+        <form role="form" th:action="@{/employee}" th:object="${payroll}" th:method="get">
+
+            <!-- Navigation -->
+            <div th:include="fragments/manager_header::manager_head"></div>
+            <div class="bg-faded p-4 my-4">
+                <div class="container">
+                    <div class="col-xs-12 text-xs-center">
+                        <h3 class="mbr-section-title display-4">Payroll</h3>
+                        <small class="mbr-section-subtitle"></small>
+                    </div>
+
+                    
+                     <div class="row row-sm-offset">
+                            <div class="col-xs-12">  
+                                
+                                   
+
+                                
+                                
+                     <table class="table table-bordered table-striped">
+                         private long employeeId;
+    private String employeeName;
+    private int dateOfJoining;
+    private int payPerHour;
+    private int workingHours;
+    private int totalPay;
+    private int status;
+    <thead>
+      <tr>
+          <th>EmployeeName</th>
+        <th>dateOfJoining</th>
+        <th>payPerHour</th>
+        <th>workingHours</th>
+             <th>totalPay</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>John</td>
+        <td>12-01-1990</td>
+        <td>$10</td>
+        <td>1pm-5pm</td>
+        <td>$50</td>
+     
+      </tr>
+       
+        <tr th:each="employee :${employees}">
+        <td th:text="${payroll.employeeId}"/>
+         <td th:text="${payroll.employeeName}"/>
+         <td th:text="${payroll.dateOfJoining"/>
+         <td th:text="${payroll.payPerHour}"/>
+        <td th:text="${payroll.totalPay}"/>
+     
+      </tr>
+    </tbody>
+  </table>
+                            </div>
+                     </div>
+                    
+                    
+                    <div class="row row-sm-offset">
+
+                        <div class="col-xs-12">
+                            <div class="form-group">
+
+                                <button type="submit" class="btn btn-primary"><span class="btn-text">Add Payroll</span><i class="btn-loader"></i></button>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </form>
+        <div th:include="fragments/footer::foot"></div>
     </body>
 </html>
