@@ -21,14 +21,14 @@
     </head>
     <body>
 
-        <form role="form" th:action="@{/employee}" th:object="${payroll}" th:method="get">
+        <form role="form" th:action="@{/payroll}" th:object="${payrolls}" th:method="get">
 
             <!-- Navigation -->
             <div th:include="fragments/manager_header::manager_head"></div>
             <div class="bg-faded p-4 my-4">
                 <div class="container">
                     <div class="col-xs-12 text-xs-center">
-                        <h3 class="mbr-section-title display-4">Payroll</h3>
+                        <h3 class="mbr-section-title display-4">PAYROLL</h3>
                         <small class="mbr-section-subtitle"></small>
                     </div>
 
@@ -41,13 +41,7 @@
                                 
                                 
                      <table class="table table-bordered table-striped">
-                         private long employeeId;
-    private String employeeName;
-    private int dateOfJoining;
-    private int payPerHour;
-    private int workingHours;
-    private int totalPay;
-    private int status;
+                        
     <thead>
       <tr>
           <th>EmployeeName</th>
@@ -67,7 +61,7 @@
      
       </tr>
        
-        <tr th:each="employee :${employees}">
+        <tr th:each="payroll :${payrolls}">
         <td th:text="${payroll.employeeId}"/>
          <td th:text="${payroll.employeeName}"/>
          <td th:text="${payroll.dateOfJoining"/>
