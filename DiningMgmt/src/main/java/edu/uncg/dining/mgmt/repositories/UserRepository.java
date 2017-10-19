@@ -5,13 +5,13 @@
  */
 package edu.uncg.dining.mgmt.repositories;
 
-import edu.uncg.dining.mgmt.models.Login;
+import edu.uncg.dining.mgmt.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author shrav
  */
-public interface LoginRepository extends JpaRepository<Login, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
     
 }
