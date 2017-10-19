@@ -21,14 +21,14 @@
     </head>
     <body>
 
-        <form role="form" th:action="@{/shifts}" th:object="${shifts}" th:method="get">
+        <form role="form" th:action="@{/shifts}" th:object="${shiftss}" th:method="get">
 
             <!-- Navigation -->
             <div th:include="fragments/supervisor_header::supervisor_head"></div>
             <div class="bg-faded p-4 my-4">
                 <div class="container">
                     <div class="col-xs-12 text-xs-center">
-                        <h3 class="mbr-section-title display-4">EMPLOYEES</h3>
+                        <h3 class="mbr-section-title display-4">SHIFTSS</h3>
                         <small class="mbr-section-subtitle"></small>
                     </div>
 
@@ -64,19 +64,20 @@
         <td>3pm</td>
         <td>2:30pm</td>
         <td>3hrs</td>
-        
+        <td>2:30pm</td>
+        <td>3hrs</td>
      
       </tr>
        
-        <tr th:each="shift :${employees}">
-        <td th:text="${shift.shiftId}"/>
-        <td th:text="${shift.employeeId}"/>
-         <td th:text="${shift.employeeName}"/>
-         <td th:text="${shift.checkIn}"/>
-         <td th:text="${shift.checkOut}"/>
-        <td th:text="${shift.breakTime}"/>
-        <td th:text="${shift.totalWorkingHrs}"/>
-        <td th:text="${shift.date}"/>
+        <tr th:each="shifts :${shiftss}">
+        <td th:text="${shifts.shiftId}"/>
+        <td th:text="${shifts.employeeId}"/>
+         <td th:text="${shifts.employeeName}"/>
+         <td th:text="${shifts.checkIn}"/>
+         <td th:text="${shifts.checkOut}"/>
+        <td th:text="${shifts.breakTime}"/>
+        <td th:text="${shifts.totalWorkingHrs}"/>
+        <td th:text="${shifts.date}"/>
         
      
       </tr>
@@ -91,7 +92,7 @@
                         <div class="col-xs-12">
                             <div class="form-group">
 
-                                <button type="submit" class="btn btn-primary"><span class="btn-text">Add Employee</span><i class="btn-loader"></i></button>
+                                <button type="submit" class="btn btn-primary"><span class="btn-text">Add Shift</span><i class="btn-loader"></i></button>
                             </div>
                         </div>
 
