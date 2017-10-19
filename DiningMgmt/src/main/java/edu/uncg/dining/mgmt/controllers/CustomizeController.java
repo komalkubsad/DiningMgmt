@@ -7,6 +7,7 @@ package edu.uncg.dining.mgmt.controllers;
 
 import edu.uncg.dining.mgmt.models.Customize;
 import edu.uncg.dining.mgmt.repositories.CustomizeRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,10 +26,10 @@ public class CustomizeController {
     private CustomizeRepository customizeRepo;
     
     @PostMapping("/customize")
-    public void save(Customize customize){
+    public String save(Customize customize){
                 System.out.println("Saving...");
                 customizeRepo.save(customize);                        
-                        
+                 return "redirect:/customized";        
     }
     
     @GetMapping("/customize")
@@ -42,5 +43,12 @@ public class CustomizeController {
         Customize customize=customizeRepo.findOne(customizeId);
         model.addAttribute("customize", customize);
         return "customize";
+    }
+    
+    @GetMapping("/customized")
+    public String showAllCustomized (Model model){ 
+        final List<Customize> allCustomized = customizeRepo.findAll();
+        model.addAttribute("customized",allCustomized);
+        return "student_home";
     }
 }

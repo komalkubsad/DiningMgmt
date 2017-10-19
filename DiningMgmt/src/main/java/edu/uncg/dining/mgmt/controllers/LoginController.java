@@ -5,42 +5,42 @@
  */
 package edu.uncg.dining.mgmt.controllers;
 
-import edu.uncg.dining.mgmt.models.Managerlogin;
-import edu.uncg.dining.mgmt.repositories.ManagerloginRepository;
+import edu.uncg.dining.mgmt.models.Login;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import edu.uncg.dining.mgmt.repositories.LoginRepository;
 
 /**
  *
  * @author shrav
  */
  @Controller
-public class ManagerloginController {
+public class LoginController {
    
     @Autowired
-    private ManagerloginRepository managerloginRepo;
+    private LoginRepository loginRepo;
     
-    @PostMapping("/managerlogin")
-    public void save(Managerlogin managerlogin){
+    @PostMapping("/login")
+    public void save(Login login){
                 System.out.println("Saving...");
-                managerloginRepo.save(managerlogin);                        
+                loginRepo.save(login);                        
                         
     }
     
-    @GetMapping("/managerlogin")
+    @GetMapping("/login")
     public String show (Model model){
-        model.addAttribute("managerlogin", new Managerlogin());
-        return "managerlogin";
+        model.addAttribute("login", new Login());
+        return "login";
     }
     
-       @GetMapping("/managerlogin/{managerId}")
-    public String show (Model model,@PathVariable long managerId){
-        Managerlogin managerlogin=managerloginRepo.findOne(managerId);
-        model.addAttribute("managerlogin", managerlogin);
-        return "managerlogin";
+       @GetMapping("/login/{id}")
+    public String show (Model model,@PathVariable long id){
+        Login login=loginRepo.findOne(id);
+        model.addAttribute("login", login);
+        return "login";
     }
 }

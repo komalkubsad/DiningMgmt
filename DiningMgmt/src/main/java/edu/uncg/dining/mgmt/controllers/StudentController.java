@@ -28,9 +28,7 @@ public class StudentController {
     public void save(Student student){
                 System.out.println("Saving...");
                 studentRepo.save(student);
-                        
-                        
-                        
+                                          
     }
     
     @GetMapping("/student")
@@ -45,6 +43,8 @@ public class StudentController {
         model.addAttribute("student", student);
         return "student";
     }
+    
+  
     
     
 }

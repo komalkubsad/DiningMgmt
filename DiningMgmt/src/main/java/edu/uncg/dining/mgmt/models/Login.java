@@ -17,20 +17,21 @@ import javax.persistence.Table;
  */
 @Entity
 @Table (name = "manager")
-public class Managerlogin {
+public class Login {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     
-    private long managerId;
+    private long id;
     private String username;
     private String password;
+    private String usertype;
 
-    public long getManagerId() {
-        return managerId;
+    public long getId() {
+        return id;
     }
 
-    public void setManagerId(long managerId) {
-        this.managerId = managerId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -47,6 +48,14 @@ public class Managerlogin {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    public String getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(String usertype) {
+        this.usertype = usertype;
     }
     
     
