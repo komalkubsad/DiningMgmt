@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html   xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 
     <meta charset="utf-8"/>
@@ -23,9 +22,10 @@
 
 </head>
 <body>
-    <div th:include="fragments/header::head"></div>
+    
 
                 <form role="form" th:action="@{/interview}" th:object="${interview}" th:method="post">
+     <div th:include="fragments/manager_header::manager_head"></div>              
     <div class="bg-faded p-4 my-4">
         <div class="container">
 

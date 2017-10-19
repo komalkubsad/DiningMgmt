@@ -8,6 +8,7 @@ package edu.uncg.dining.mgmt.controllers;
 import edu.uncg.dining.mgmt.models.Stock;
 import edu.uncg.dining.mgmt.repositories.MenuRepository;
 import edu.uncg.dining.mgmt.repositories.StockRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,10 +26,10 @@ public class StockController {
     private StockRepository stockRepo;
     
     @PostMapping("/stock")
-    public void save(Stock stock){
+    public String save(Stock stock){
                 System.out.println("Saving...");
                 stockRepo.save(stock);
-                        
+                 return "redirect:/stocks";       
                         
                         
     }
@@ -44,6 +45,13 @@ public class StockController {
          Stock stock=stockRepo.findOne(itemId);
         model.addAttribute("stock", stock);
         return "employee";
+    }
+    
+    @GetMapping("/stocks")
+    public String showAllStocks (Model model){ 
+        final List<Stock> allStocks = stockRepo.findAll();
+        model.addAttribute("stocks",allStocks);
+        return "stock_display";
     }
     
     

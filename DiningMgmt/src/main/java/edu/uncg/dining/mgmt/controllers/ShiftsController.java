@@ -7,6 +7,7 @@ package edu.uncg.dining.mgmt.controllers;
 
 import edu.uncg.dining.mgmt.models.Shifts;
 import edu.uncg.dining.mgmt.repositories.ShiftsRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,10 +26,10 @@ public class ShiftsController {
     private ShiftsRepository shiftsRepo;
     
     @PostMapping("/shifts")
-    public void save(Shifts shifts){
+    public String save(Shifts shifts){
                 System.out.println("Saving...");
                 shiftsRepo.save(shifts);                        
-                        
+                return "redirect:/shiftss";        
     }
     
     @GetMapping("/shifts")
@@ -44,5 +45,11 @@ public class ShiftsController {
         model.addAttribute("shifts", shifts);
         return "shifts";
     }
-  
+    
+    @GetMapping("/shiftss")
+    public String showAllShiftss (Model model){ 
+        final List<Shifts> allShiftss = shiftsRepo.findAll();
+        model.addAttribute("shiftss",allShiftss);
+        return "supervisor_home";
+    }
 }
