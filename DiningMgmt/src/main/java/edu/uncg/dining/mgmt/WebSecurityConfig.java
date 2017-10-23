@@ -45,7 +45,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(new AuthenticationSuccessHandler() {
             @Override
             public void onAuthenticationSuccess(HttpServletRequest hsr, HttpServletResponse hsr1, Authentication a) throws IOException, ServletException {
-                System.out.println("a: "+a.getAuthorities());
                 if(a.getAuthorities().toString().contains("ROLE_manager")){
                     redirectStrategy.sendRedirect(hsr, hsr1, "/employees");
                 } else if(a.getAuthorities().toString().contains("ROLE_supervisor")){
@@ -59,7 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .logout()
                 .permitAll()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutUrl("/");
+                .logoutSuccessUrl("/");
     }
     
     
@@ -68,11 +67,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         
         auth.inMemoryAuthentication()
-                .withUser("komal").password("komal123").roles("manager").and()
-                .withUser("abc").password("abc").roles("supervisor").and()
-                .withUser("xyz").password("xyz").roles("student");
+                .withUser("manager").password("manager123").roles("manager").and()
+                .withUser("supervisor").password("supervisor123").roles("supervisor").and()
+                .withUser("student").password("student123").roles("student");
         
-        
-       
     }
 }
