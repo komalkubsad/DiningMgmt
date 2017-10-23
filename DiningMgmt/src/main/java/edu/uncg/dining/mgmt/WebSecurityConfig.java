@@ -5,12 +5,21 @@
  */
 package edu.uncg.dining.mgmt;
 
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.web.DefaultRedirectStrategy;
+import org.springframework.security.web.RedirectStrategy;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
  *
@@ -19,6 +28,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    
+    
+    private RedirectStrategy redirectStrategy=new DefaultRedirectStrategy();
+    
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -29,19 +42,36 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .formLogin()
                 .loginPage("/login")
                 .permitAll()
-                .defaultSuccessUrl("/employees")
+                .successHandler(new AuthenticationSuccessHandler() {
+            @Override
+            public void onAuthenticationSuccess(HttpServletRequest hsr, HttpServletResponse hsr1, Authentication a) throws IOException, ServletException {
+                System.out.println("a: "+a.getAuthorities());
+                if(a.getAuthorities().toString().contains("ROLE_manager")){
+                    redirectStrategy.sendRedirect(hsr, hsr1, "/employees");
+                } else if(a.getAuthorities().toString().contains("ROLE_supervisor")){
+                    redirectStrategy.sendRedirect(hsr, hsr1, "/shiftss");
+                } else{
+                    redirectStrategy.sendRedirect(hsr, hsr1, "/customized");
+                }  
+            }
+        })
                 .and()
             .logout()
-                .permitAll();
+                .permitAll()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutUrl("/");
     }
-
+    
     
     
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-            .inMemoryAuthentication()
-                .withUser("komal").password("komal123").roles("manager");
+        
+        auth.inMemoryAuthentication()
+                .withUser("komal").password("komal123").roles("manager").and()
+                .withUser("abc").password("abc").roles("supervisor").and()
+                .withUser("xyz").password("xyz").roles("student");
+        
         
        
     }
