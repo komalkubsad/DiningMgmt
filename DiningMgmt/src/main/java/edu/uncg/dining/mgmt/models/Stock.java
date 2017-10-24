@@ -24,7 +24,7 @@ public class Stock {
     
     private long itemId;
     private String item;
-    private int quantity;
+    private String quantity;
 
     public long getItemId() {
         return itemId;
@@ -42,11 +42,11 @@ public class Stock {
         this.item = item;
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
     

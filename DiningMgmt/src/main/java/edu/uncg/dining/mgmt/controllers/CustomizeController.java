@@ -27,7 +27,7 @@ public class CustomizeController {
     
     @PostMapping("/customize")
     public String save(Customize customize){
-                System.out.println("Saving...");
+                System.out.println("Saving..."+customize.getItem()+" "+customize.getDayOfSpecial());
                 customizeRepo.save(customize);                        
                  return "redirect:/customized";        
     }

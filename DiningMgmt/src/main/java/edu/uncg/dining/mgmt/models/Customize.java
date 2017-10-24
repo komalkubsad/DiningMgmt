@@ -20,7 +20,6 @@ import javax.persistence.Table;
 public class Customize {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    
     private long customID;
     private long studentId;
     private String studentName;
@@ -66,8 +65,4 @@ public class Customize {
     public void setDayOfSpeacial(String dayOfSpecial) {
         this.dayOfSpecial = dayOfSpecial;
     }
-    
-    
-    
-    
 }
