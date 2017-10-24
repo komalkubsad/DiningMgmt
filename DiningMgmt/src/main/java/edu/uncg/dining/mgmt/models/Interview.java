@@ -23,8 +23,8 @@ public class Interview {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long interviewId;
     private String candidateName;
-    private int interviewTime;
-    private int interviewDate;
+    private String interviewTime;
+    private String interviewDate;
     private String selectionStatus;
 
     public Long getInterviewId() {
@@ -44,19 +44,19 @@ public class Interview {
         this.candidateName = candidateName;
     }
 
-    public int getInterviewTime() {
+    public String getInterviewTime() {
         return interviewTime;
     }
 
-    public void setInterviewTime(int interviewTime) {
+    public void setInterviewTime(String interviewTime) {
         this.interviewTime = interviewTime;
     }
 
-    public int getInterviewDate() {
+    public String getInterviewDate() {
         return interviewDate;
     }
 
-    public void setInterviewDate(int interviewDate) {
+    public void setInterviewDate(String interviewDate) {
         this.interviewDate = interviewDate;
     }
 

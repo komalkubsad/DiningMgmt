@@ -62,10 +62,10 @@
       </tr>
        
         <tr th:each="payroll :${payrolls}">
-        <td th:text="${payroll.employeeId}"/>
          <td th:text="${payroll.employeeName}"/>
-         <td th:text="${payroll.dateOfJoining"/>
+         <td th:text="${payroll.dateOfJoining}"/>
          <td th:text="${payroll.payPerHour}"/>
+         <td th:text="${payroll.workingHours}"/>
         <td th:text="${payroll.totalPay}"/>
      
       </tr>

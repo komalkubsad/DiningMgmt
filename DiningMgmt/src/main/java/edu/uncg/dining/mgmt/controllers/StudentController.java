@@ -25,10 +25,10 @@ public class StudentController {
     private StudentRepository studentRepo;
     
     @PostMapping("/student")
-    public void save(Student student){
+    public String save(Student student){
                 System.out.println("Saving...");
                 studentRepo.save(student);
-                                          
+                return "success";
     }
     
     @GetMapping("/student")

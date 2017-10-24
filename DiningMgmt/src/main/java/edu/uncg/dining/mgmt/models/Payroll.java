@@ -23,11 +23,11 @@ public class Payroll {
     private long payrollId;
     private long employeeId;
     private String employeeName;
-    private int dateOfJoining;
+    private String dateOfJoining;
     private int payPerHour;
-    private int workingHours;
+    private String workingHours;
     private int totalPay;
-    private int status;
+    private String status;
 
     public long getEmployeeId() {
         return employeeId;
@@ -45,11 +45,11 @@ public class Payroll {
         this.employeeName = employeeName;
     }
 
-    public int getDateOfJoining() {
+    public String getDateOfJoining() {
         return dateOfJoining;
     }
 
-    public void setDateOfJoining(int dateOfJoining) {
+    public void setDateOfJoining(String dateOfJoining) {
         this.dateOfJoining = dateOfJoining;
     }
 
@@ -61,11 +61,11 @@ public class Payroll {
         this.payPerHour = payPerHour;
     }
     
-    public int getWorkingHours() {
+    public String getWorkingHours() {
         return workingHours;
     }
 
-    public void setWorkingHours(int workingHours) {
+    public void setWorkingHours(String workingHours) {
         this.workingHours = workingHours;
     }
 
@@ -77,11 +77,11 @@ public class Payroll {
         this.totalPay = totalPay;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
