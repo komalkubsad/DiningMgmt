@@ -25,7 +25,7 @@ public class Interview {
     private String candidateName;
     private String interviewTime;
     private String interviewDate;
-    private String selectionStatus;
+    
 
     public Long getInterviewId() {
         return interviewId;
@@ -60,13 +60,7 @@ public class Interview {
         this.interviewDate = interviewDate;
     }
 
-    public String getSelectionStatus() {
-        return selectionStatus;
-    }
-
-    public void setSelectionStatus(String selectionStatus) {
-        this.selectionStatus = selectionStatus;
-    }
+    
     
     
 }
