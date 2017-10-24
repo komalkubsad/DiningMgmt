@@ -50,6 +50,7 @@
         <th>PayPerHour</th>
         <th>WorkingHours</th>
              <th>TotalPay</th>
+             <th>Status</th>
       </tr>
     </thead>
     <tbody>
@@ -60,6 +61,7 @@
         <td>$10</td>
         <td>1pm-5pm</td>
         <td>$50</td>
+        <td>Paid</td>
      
       </tr>
        
@@ -70,6 +72,7 @@
          <td th:text="${payroll.payPerHour}"/>
          <td th:text="${payroll.workingHours}"/>
         <td th:text="${payroll.totalPay}"/>
+        <td th:text="${payroll.status}"/>
      
       </tr>
     </tbody>
