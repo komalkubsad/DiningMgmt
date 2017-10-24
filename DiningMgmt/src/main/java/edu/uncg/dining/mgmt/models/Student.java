@@ -24,8 +24,26 @@ public class Student {
     private long studentId;
     private String studentName;
     private String mealPlan;
-    private int startDate;
+    private String startDate;
     private int endDate;
+    private String username;
+    private String password;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public long getStudentId() {
         return studentId;
@@ -51,11 +69,11 @@ public class Student {
         this.mealPlan = mealPlan;
     }
 
-    public int getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(int startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
