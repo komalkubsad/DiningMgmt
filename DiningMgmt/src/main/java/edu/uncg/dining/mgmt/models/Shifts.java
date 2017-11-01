@@ -24,11 +24,11 @@ public class Shifts {
     private long shiftId;
     private long employeeId;
     private String employeeName;
-    private double checkIn;
-    private double checkOut;
-    private int breakTime;
-    private int totalWorkingHrs;
-    private int date;
+    private String checkIn;
+    private String checkOut;
+    private String breakTime;
+    private String totalWorkingHrs;
+    private String date;
     
 
     public long getShiftId() {
@@ -55,43 +55,43 @@ public class Shifts {
         this.employeeName = employeeName;
     }
 
-    public double getCheckIn() {
+    public String getCheckIn() {
         return checkIn;
     }
 
-    public void setCheckIn(double checkIn) {
+    public void setCheckIn(String checkIn) {
         this.checkIn = checkIn;
     }
 
-    public double getCheckOut() {
+    public String getCheckOut() {
         return checkOut;
     }
 
-    public void setCheckOut(double checkOut) {
+    public void setCheckOut(String checkOut) {
         this.checkOut = checkOut;
     }
 
-    public int getBreakTime() {
+    public String getBreakTime() {
         return breakTime;
     }
 
-    public void setBreakTime(int breakTime) {
+    public void setBreakTime(String breakTime) {
         this.breakTime = breakTime;
     }
 
-    public int getTotalWorkingHrs() {
+    public String getTotalWorkingHrs() {
         return totalWorkingHrs;
     }
 
-    public void setTotalWorkingHrs(int totalWorkingHrs) {
+    public void setTotalWorkingHrs(String totalWorkingHrs) {
         this.totalWorkingHrs = totalWorkingHrs;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
     

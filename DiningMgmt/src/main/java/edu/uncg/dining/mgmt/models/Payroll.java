@@ -24,9 +24,9 @@ public class Payroll {
     private long employeeId;
     private String employeeName;
     private String dateOfJoining;
-    private int payPerHour;
+    private String payPerHour;
     private String workingHours;
-    private int totalPay;
+    private String totalPay;
     private String status;
 
     public long getEmployeeId() {
@@ -53,11 +53,11 @@ public class Payroll {
         this.dateOfJoining = dateOfJoining;
     }
 
-    public int getPayPerHour() {
+    public String getPayPerHour() {
         return payPerHour;
     }
 
-    public void setPayPerHour(int payPerHour) {
+    public void setPayPerHour(String payPerHour) {
         this.payPerHour = payPerHour;
     }
     
@@ -69,11 +69,11 @@ public class Payroll {
         this.workingHours = workingHours;
     }
 
-    public int getTotalPay() {
+    public String getTotalPay() {
         return totalPay;
     }
 
-    public void setTotalPay(int totalPay) {
+    public void setTotalPay(String totalPay) {
         this.totalPay = totalPay;
     }
 
