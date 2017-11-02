@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Table (name = "customize")
 public class Customize {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long customID;
     private long studentId;
     private String studentName;

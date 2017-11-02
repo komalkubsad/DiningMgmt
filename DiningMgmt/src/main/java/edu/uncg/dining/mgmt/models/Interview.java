@@ -60,7 +60,7 @@ public class Interview {
         this.interviewDate = interviewDate;
     }
 
-   
+    
     
     
 }
