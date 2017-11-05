@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-
+     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+     
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css"/>
+     
+   
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
 
 
@@ -16,18 +21,32 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"/>
 
     <!-- Custom styles for this template -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
     <link href="css/custom.css" rel="stylesheet"/>
-
+    
+    
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<link id="bs-css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"/>
+<link id="bsdp-css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    
+    
+        <script type="text/javascript">
+            $(function () {
+                $('#sandbox-container input').datepicker({
+                }); 
+            });
+        </script>
 </head>
 <body>
+   
     
 
                 <form role="form" th:action="@{/interview}" th:object="${interview}" th:method="post">
      <div th:include="fragments/manager_header::manager_head"></div>              
     <div class="bg-faded p-4 my-4">
         <div class="container">
-
-          <div class="col-xs-12 text-xs-center">
+                <div class="col-xs-12 text-xs-center">
                     <h3 class="mbr-section-title display-2">INTERVIEW</h3>
                     <small class="mbr-section-subtitle"></small>
                 </div>
@@ -47,15 +66,15 @@
                                 </div>
                             </div>
                  </div>
-                 <div class="row row-sm-offset">
+                <div class="row row-sm-offset">
                             <div class="col-xs-12">
-                                <div class="form-group">
+                                <div class="form-group" id="sandbox-container">
                                     <label class="form-control-label" for="form1-4-name">Interview Date<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{interviewDate}"/>
+                                        <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{interviewDate}"/>
                                 </div>
                             </div>
-                 </div>
-                
+                </div>
+          
             <div class="row row-sm-offset">
 
                             <div class="col-xs-12">
