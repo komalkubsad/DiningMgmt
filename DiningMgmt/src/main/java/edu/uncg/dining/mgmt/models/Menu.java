@@ -20,7 +20,7 @@ import javax.persistence.Table;
 public class Menu {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long dayId;
     private String day;
     private String item1;

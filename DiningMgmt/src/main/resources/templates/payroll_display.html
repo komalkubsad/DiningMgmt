@@ -44,6 +44,7 @@
                         
     <thead>
       <tr>
+          <th>PayrollId</th>
           <th>EmployeeId</th>
           <th>EmployeeName</th>
         <th>DateOfJoining</th>
@@ -56,6 +57,7 @@
     <tbody>
       <tr>
           <td>0</td>
+          <td>0</td>
           <td>John</td>
         <td>12-01-1990</td>
         <td>$10</td>
@@ -66,6 +68,7 @@
       </tr>
        
         <tr th:each="payroll :${payrolls}">
+            <td th:text="${payroll.payrollId}"/>
             <td th:text="${payroll.employeeId}"/>
          <td th:text="${payroll.employeeName}"/>
          <td th:text="${payroll.dateOfJoining}"/>

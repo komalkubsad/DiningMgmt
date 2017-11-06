@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Table(name ="Employee")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long employeeId;
     private String employeeName;
     private String address;

@@ -5,6 +5,7 @@
  */
 package edu.uncg.dining.mgmt.models;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,11 +21,11 @@ import javax.persistence.Table;
 public class Interview {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long interviewId;
     private String candidateName;
     private String interviewTime;
-    private String interviewDate;
+    private Date interviewDate;
     
 
     public Long getInterviewId() {
@@ -52,11 +53,11 @@ public class Interview {
         this.interviewTime = interviewTime;
     }
 
-    public String getInterviewDate() {
+    public Date getInterviewDate() {
         return interviewDate;
     }
 
-    public void setInterviewDate(String interviewDate) {
+    public void setInterviewDate(Date interviewDate) {
         this.interviewDate = interviewDate;
     }
 

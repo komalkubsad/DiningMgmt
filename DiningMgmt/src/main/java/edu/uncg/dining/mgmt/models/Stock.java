@@ -20,7 +20,7 @@ import javax.persistence.Table;
 public class Stock {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     private long itemId;
     private String item;

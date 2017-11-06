@@ -5,6 +5,8 @@
  */
 package edu.uncg.dining.mgmt.models;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,11 +21,11 @@ import javax.persistence.Table;
 @Table (name = "Payroll")
 public class Payroll {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long payrollId;
     private long employeeId;
     private String employeeName;
-    private String dateOfJoining;
+    private Date dateOfJoining;
     private String payPerHour;
     private String workingHours;
     private String totalPay;
@@ -45,11 +47,11 @@ public class Payroll {
         this.employeeName = employeeName;
     }
 
-    public String getDateOfJoining() {
+    public Date getDateOfJoining() {
         return dateOfJoining;
     }
 
-    public void setDateOfJoining(String dateOfJoining) {
+    public void setDateOfJoining(Date dateOfJoining) {
         this.dateOfJoining = dateOfJoining;
     }
 

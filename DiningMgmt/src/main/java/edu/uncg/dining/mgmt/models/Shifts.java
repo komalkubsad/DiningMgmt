@@ -5,6 +5,7 @@
  */
 package edu.uncg.dining.mgmt.models;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,7 +20,7 @@ import javax.persistence.Table;
 @Table (name = "Shifts")
 public class Shifts {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     private long shiftId;
     private long employeeId;
@@ -28,7 +29,7 @@ public class Shifts {
     private String checkOut;
     private String breakTime;
     private String totalWorkingHrs;
-    private String date;
+    private Date date;
     
 
     public long getShiftId() {
@@ -87,11 +88,11 @@ public class Shifts {
         this.totalWorkingHrs = totalWorkingHrs;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
     
