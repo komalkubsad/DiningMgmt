@@ -44,10 +44,8 @@
                         
     <thead>
       <tr>
-          <th>PayrollId</th>
-          <th>EmployeeId</th>
+        
           <th>EmployeeName</th>
-        <th>DateOfJoining</th>
         <th>PayPerHour</th>
         <th>WorkingHours</th>
              <th>TotalPay</th>
@@ -56,10 +54,12 @@
     </thead>
     <tbody>
       <tr>
+<<<<<<< HEAD (1a8580a) - Merge origin/master
           <td>0</td>
           <td>0</td>
+=======
+>>>>>>> origin/master (aed465a) - 11/5
           <td>John</td>
-        <td>12-01-1990</td>
         <td>$10</td>
         <td>1pm-5pm</td>
         <td>$50</td>
@@ -68,10 +68,13 @@
       </tr>
        
         <tr th:each="payroll :${payrolls}">
+<<<<<<< HEAD (1a8580a) - Merge origin/master
             <td th:text="${payroll.payrollId}"/>
             <td th:text="${payroll.employeeId}"/>
+=======
+
+>>>>>>> origin/master (aed465a) - 11/5
          <td th:text="${payroll.employeeName}"/>
-         <td th:text="${payroll.dateOfJoining}"/>
          <td th:text="${payroll.payPerHour}"/>
          <td th:text="${payroll.workingHours}"/>
         <td th:text="${payroll.totalPay}"/>

@@ -23,21 +23,13 @@ public class Payroll {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long payrollId;
-    private long employeeId;
     private String employeeName;
-    private Date dateOfJoining;
     private String payPerHour;
     private String workingHours;
     private String totalPay;
     private String status;
 
-    public long getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(long employeeId) {
-        this.employeeId = employeeId;
-    }
+   
 
     public String getEmployeeName() {
         return employeeName;
@@ -45,16 +37,10 @@ public class Payroll {
 
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
+
     }
 
-    public Date getDateOfJoining() {
-        return dateOfJoining;
-    }
-
-    public void setDateOfJoining(Date dateOfJoining) {
-        this.dateOfJoining = dateOfJoining;
-    }
-
+    
     public String getPayPerHour() {
         return payPerHour;
     }

@@ -48,17 +48,11 @@
         <th>Address</th>
         <th>Contact</th>
              <th>Email</th>
+             <th>Date Of Joining</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-          <td>0</td>
-        <td>John Doe</td>
-        <td>3810 Cotswold</td>
-        <td>1234567890</td>
-        <td>john@example.com</td>
-     
-      </tr>
+      
        
         <tr th:each="employee :${employees}">
         <td th:text="${employee.employeeId}"/>
@@ -66,6 +60,7 @@
          <td th:text="${employee.address}"/>
          <td th:text="${employee.contact}"/>
         <td th:text="${employee.email}"/>
+        <td th:text="${employee.dateOfJoining}"/>
      
       </tr>
     </tbody>
