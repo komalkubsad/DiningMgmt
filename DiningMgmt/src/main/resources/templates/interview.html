@@ -9,7 +9,8 @@
      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
      
      <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css"/>
-     
+     <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css" />
+    
    
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
@@ -26,15 +27,18 @@
     
     
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-<link id="bs-css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"/>
-<link id="bsdp-css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link id="bs-css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
+<link id="bsdp-css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
     
     
         <script type="text/javascript">
             $(function () {
                 $('#sandbox-container input').datepicker({
                 }); 
+                
+                     $('#timepicker1').timepicker();
             });
         </script>
 </head>
@@ -60,9 +64,11 @@
                 </div>
                  <div class="row row-sm-offset">
                             <div class="col-xs-12">
-                                <div class="form-group">
+                                <div class="form-group input-group bootstrap-timepicker timepicker">
                                     <label class="form-control-label" for="form1-4-name">Interview Time<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{interviewTime}"/>
+                                    <input type="text" class="form-control" id="timepicker1" name="name" required="" data-form-field="Name" th:field="*{interviewTime}"/>
+                                    
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                                 </div>
                             </div>
                  </div>
