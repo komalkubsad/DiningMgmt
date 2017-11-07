@@ -28,7 +28,6 @@ public class Shifts {
     private String checkIn;
     private String checkOut;
     private String breakTime;
-    private String totalWorkingHrs;
     private Date date;
     
 
@@ -80,13 +79,6 @@ public class Shifts {
         this.breakTime = breakTime;
     }
 
-    public String getTotalWorkingHrs() {
-        return totalWorkingHrs;
-    }
-
-    public void setTotalWorkingHrs(String totalWorkingHrs) {
-        this.totalWorkingHrs = totalWorkingHrs;
-    }
 
     public Date getDate() {
         return date;

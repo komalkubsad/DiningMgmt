@@ -55,17 +55,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-          <td>0</td>
-        <td>Monday</td>
-        <td>Chicken Pizza</td>
-        <td>Ham Burgers</td>
-        <td>Pasta</td>
-        <td>Salad</td>
-        <td>Fried Chicken</td>
-        <td>Lunch</td>
-     
-      </tr>
+      
        
         <tr th:each="menu :${menus}">
         <td th:text="${menu.dayId}"/>

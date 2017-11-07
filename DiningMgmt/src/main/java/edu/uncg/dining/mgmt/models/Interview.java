@@ -5,6 +5,7 @@
  */
 package edu.uncg.dining.mgmt.models;
 
+import java.time.LocalTime;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

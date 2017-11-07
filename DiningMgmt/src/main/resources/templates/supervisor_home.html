@@ -52,22 +52,11 @@
         <th>checkIn</th>
         <th>checkOut</th>
         <th>breakTime</th>
-        <th>totalWorkingHrs</th>
         <th>date</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-          <td>0</td>
-        <td>5</td>
-        <td>John Doe</td>
-        <td>12 PM</td>
-        <td>3 PM</td>
-        <td>0.50 hrs</td>
-        <td>2 hours 30 minutes</td>
-        <td>10/19/2017</td>
-     
-      </tr>
+      
        
         <tr th:each="shifts :${shiftss}">
         <td th:text="${shifts.shiftId}"/>
@@ -76,7 +65,6 @@
          <td th:text="${shifts.checkIn}"/>
          <td th:text="${shifts.checkOut}"/>
         <td th:text="${shifts.breakTime}"/>
-        <td th:text="${shifts.totalWorkingHrs}"/>
         <td th:text="${shifts.date}"/>
         
      

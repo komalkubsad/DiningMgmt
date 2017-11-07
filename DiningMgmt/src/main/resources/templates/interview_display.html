@@ -51,20 +51,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-          <td>0</td>
-        <td>John Doe</td>
-        <td>10/19/2017</td>
-        <td>1 PM</td>
-        
      
-      </tr>
        
         <tr th:each="interview :${Interviews}">
         <td th:text="${interview.interviewId}"/>
         <td th:text="${interview.candidateName}"/>
         <td th:text="${interview.interviewTime}"/>
-        <td th:text="${interview.interviewDate}"/>
+        <td th:text="${#dates.format(interview.interviewDate,'MM-dd-yyyy')}"/>
         
       </tr>
     </tbody>

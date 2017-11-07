@@ -53,15 +53,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-          <td>0</td>
-          <td>John</td>
-        <td>$10</td>
-        <td>1pm-5pm</td>
-        <td>$50</td>
-        <td>Paid</td>
-     
-      </tr>
+      
        
         <tr th:each="payroll :${payrolls}">
             <td th:text="${payroll.payrollId}"/>
