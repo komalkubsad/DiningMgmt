@@ -7,6 +7,7 @@ package edu.uncg.dining.mgmt.models;
 
 import java.time.LocalTime;
 import java.util.Date;
+import java.time.LocalTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +27,14 @@ public class Interview {
     private Long interviewId;
     private String candidateName;
     private String interviewTime;
+
+    public String getInterviewTime() {
+        return interviewTime;
+    }
+
+    public void setInterviewTime(String interviewTime) {
+        this.interviewTime = interviewTime;
+    }
     private Date interviewDate;
     
 
@@ -46,13 +55,6 @@ public class Interview {
         this.candidateName = candidateName;
     }
 
-    public String getInterviewTime() {
-        return interviewTime;
-    }
-
-    public void setInterviewTime(String interviewTime) {
-        this.interviewTime = interviewTime;
-    }
 
     public Date getInterviewDate() {
         return interviewDate;

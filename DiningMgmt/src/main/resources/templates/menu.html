@@ -36,7 +36,16 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Day<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{day}"/>
+                                    <select class="form-control" th:field="*{day}">
+                                    <option value="">Select Day</option>
+                                    <option value="3">Monday</option>
+                                    <option value="6">Tuesday</option>
+                                    <option value="12">Wednesday</option>
+                                    <option value="12">Thursday</option>
+                                    <option value="3">Friday</option>
+                                    <option value="3">Saturday</option>
+                                    <option value="3">Sunday</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
