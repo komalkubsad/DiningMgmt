@@ -18,7 +18,34 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"/>
 
     <!-- Custom styles for this template -->
+      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
     <link href="css/custom.css" rel="stylesheet"/>
+    
+     <script type="text/javascript">
+         //<![CDATA[
+
+         $(function () {
+             
+             function calculateTotalPay(){
+             var total =0;    
+            var hrs= $("#hrs").val();
+            var pay = $("#pay").val();
+            if((hrs!='')&&(pay!='')){
+                  total =parseInt(hrs)*parseInt(pay);
+                 $("#totalPay").val(total + "$");
+             }
+         }
+            
+                $("#hrs").on("change",calculateTotalPay);
+                 $("#pay").on("change",calculateTotalPay);
+                
+
+            });
+         
+         
+//]]>
+</script>
 
 </head>
 <body>
@@ -45,10 +72,10 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Pay Per Hour<span class="form-asterisk">*</span></label>
-                                   <select class="form-control" th:field="*{payPerHour}">
+                                   <select id="pay" class="form-control" th:field="*{payPerHour}">
                                     <option value="">Select Pay</option>
-                                    <option value="3">$8/hr</option>
-                                    <option value="6">$10/hr</option>
+                                    <option value="8">$8/hr</option>
+                                    <option value="10">$10/hr</option>
                                     <option value="12">$12/hr</option>
                                    </select>
                                 </div>
@@ -58,20 +85,20 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Working hours<span class="form-asterisk">*</span></label>
-                                    <select class="form-control" th:field="*{workingHours}">
+                                    <select id="hrs" class="form-control" th:field="*{workingHours}">
                                     <option value="">Select Working Hrs</option>
-                                    <option value="3">5 hrs</option>
-                                    <option value="6">8 hrs</option>
-                                    <option value="12">10 hrs</option>
+                                    <option value="5">5 hrs</option>
+                                    <option value="8">8 hrs</option>
+                                    <option value="10">10 hrs</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
             <div class="row row-sm-offset">
                             <div class="col-xs-12">
-                                <div class="form-group">
+                                <div class="form-group" id="calculate()">
                                     <label class="form-control-label" for="form1-4-name">Total Pay Per day<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{totalPay}"/>
+                                    <input type="text" id="totalPay" class="form-control" name="name" required="" data-form-field="Name" th:field="*{totalPay}"/>
                                 </div>
                             </div>
                         </div>
