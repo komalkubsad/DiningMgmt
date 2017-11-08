@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -26,7 +27,11 @@ public class Student {
     private String studentName;
     private String mealPlan;
     private Date startDate;
+
+    @Transient
+
     private String username;
+    @Transient
     private String password;
 
     public String getUsername() {
@@ -77,7 +82,4 @@ public class Student {
         this.startDate = startDate;
     }
 
-  
-    
-    
 }

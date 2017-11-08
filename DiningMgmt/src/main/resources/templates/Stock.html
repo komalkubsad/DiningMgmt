@@ -36,7 +36,28 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{item}"/>
+                            <select class="form-control" th:field="*{item}">
+                                    <option value="">Select item</option>
+                                    <option value="3">Rice</option>
+                                    <option value="6">Bread</option>
+                                    <option value="12">Flour</option>
+                                    <option value="3">Milk</option>
+                                    <option value="6">Cereal</option>
+                                    <option value="12">Eggs</option>
+                                    <option value="3">Yogurt</option>
+                                    <option value="6">Chicken</option>
+                                    <option value="12">Beans</option>
+                                    <option value="3">Muffins</option>
+                                    <option value="6">Doughnuts</option>
+                                    <option value="12">Onions</option>
+                                    <option value="3">Pasta</option>
+                                    <option value="6">Bread</option>
+                                    <option value="12">Sugar</option>
+                                    <option value="3">Tortilla</option>
+                                    <option value="6">Spaghetti</option>
+                                    <option value="12">Burger buns</option>
+
+                            </select>
                                 </div>
                             </div>
                         </div>
