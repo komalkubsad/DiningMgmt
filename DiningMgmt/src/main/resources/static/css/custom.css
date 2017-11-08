@@ -21,6 +21,10 @@ h1 {
     font-size: 4rem;
 }
 
+.hideMe {
+    display: none;
+}
+
 .tagline-upper {
     font-size: 5rem;
     font-weight: 700;

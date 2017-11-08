@@ -7,7 +7,9 @@ package edu.uncg.dining.mgmt.controllers;
 
 
 import edu.uncg.dining.mgmt.models.Student;
+import edu.uncg.dining.mgmt.models.User;
 import edu.uncg.dining.mgmt.repositories.StudentRepository;
+import edu.uncg.dining.mgmt.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,10 +26,18 @@ public class StudentController {
     @Autowired
     private StudentRepository studentRepo;
     
+    @Autowired
+    private UserRepository userRepository;
+    
     @PostMapping("/student")
     public String save(Student student){
                 System.out.println("Saving...");
                 studentRepo.save(student);
+                User user = new User();
+         user.setUsername(student.getUsername());
+         user.setPassword(student.getPassword());
+         user.setUsertype("student");
+         userRepository.save(user);
                 return "success";
     }
     

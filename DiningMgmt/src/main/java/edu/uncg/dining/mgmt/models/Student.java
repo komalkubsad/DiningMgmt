@@ -5,11 +5,13 @@
  */
 package edu.uncg.dining.mgmt.models;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -24,9 +26,10 @@ public class Student {
     private long studentId;
     private String studentName;
     private String mealPlan;
-    private String startDate;
-    private int endDate;
+    private Date startDate;
+    @Transient
     private String username;
+    @Transient
     private String password;
 
     public String getUsername() {
@@ -69,22 +72,12 @@ public class Student {
         this.mealPlan = mealPlan;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
-
-    public int getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(int endDate) {
-        this.endDate = endDate;
-    }
-    
-    
     
 }
