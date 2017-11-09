@@ -62,7 +62,7 @@ public class Customize {
         return dayOfSpecial;
     }
 
-    public void setDayOfSpeacial(String dayOfSpecial) {
+    public void setDayOfSpecial(String dayOfSpecial) {
         this.dayOfSpecial = dayOfSpecial;
     }
 }

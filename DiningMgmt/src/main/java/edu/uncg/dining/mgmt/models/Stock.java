@@ -5,6 +5,7 @@
  */
 package edu.uncg.dining.mgmt.models;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class Stock {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     private long itemId;
+    private Date date;
     private String item;
     private String quantity;
 
@@ -38,6 +40,13 @@ public class Stock {
         return item;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
     public void setItem(String item) {
         this.item = item;
     }

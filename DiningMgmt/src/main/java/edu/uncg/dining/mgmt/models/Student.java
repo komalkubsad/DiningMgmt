@@ -27,7 +27,9 @@ public class Student {
     private String studentName;
     private String mealPlan;
     private Date startDate;
+
     @Transient
+
     private String username;
     @Transient
     private String password;
@@ -79,5 +81,5 @@ public class Student {
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
-    
+
 }

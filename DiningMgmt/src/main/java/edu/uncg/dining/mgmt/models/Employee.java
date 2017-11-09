@@ -5,6 +5,7 @@
  */
 package edu.uncg.dining.mgmt.models;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,13 +26,13 @@ public class Employee {
     private String address;
     private String contact;
     private String email;
-    private String dateOfJoining;
+    private Date dateOfJoining;
 
-    public String getDateOfJoining() {
+    public Date getDateOfJoining() {
         return dateOfJoining;
     }
 
-    public void setDateOfJoining(String dateOfJoining) {
+    public void setDateOfJoining(Date dateOfJoining) {
         this.dateOfJoining = dateOfJoining;
     }
     

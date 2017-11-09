@@ -5,6 +5,7 @@
  */
 package edu.uncg.dining.mgmt.models;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +23,7 @@ public class Menu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long dayId;
+    private Date date;
     private String day;
     private String item1;
     private String item2;
@@ -45,6 +47,14 @@ public class Menu {
 
     public void setDayId(long dayId) {
         this.dayId = dayId;
+    }
+    
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getDay() {

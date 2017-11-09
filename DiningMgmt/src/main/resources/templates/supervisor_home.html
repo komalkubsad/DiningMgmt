@@ -65,7 +65,7 @@
          <td th:text="${shifts.checkIn}"/>
          <td th:text="${shifts.checkOut}"/>
         <td th:text="${shifts.breakTime}"/>
-        <td th:text="${shifts.date}"/>
+        <td th:text="${#dates.format(shifts.date,'MM-dd-yyyy')}"/>
         
      
       </tr>
