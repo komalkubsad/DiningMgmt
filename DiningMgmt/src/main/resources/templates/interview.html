@@ -9,12 +9,12 @@
      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
      
      <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css"  type="text/css"/>
-     <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css" />
+     
     
    
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
-
+<link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css" />
 
 
     <!-- Custom fonts for this template -->
@@ -26,13 +26,9 @@
    
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
-<link id="bs-css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
-<link id="bsdp-css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css"/>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
- <script  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
 
-    <link id="bs-css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
+    
     <link id="bsdp-css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
@@ -72,12 +68,19 @@
                 </div>
                  <div class="row row-sm-offset">
                             <div class="col-xs-12">
-                                <div class="form-group input-group bootstrap-timepicker timepicker">
+                                <div class="form-group bootstrap-timepicker timepicker">
                                     <label class="form-control-label" for="form1-4-name">Interview Time<span class="form-asterisk">*</span></label>
-                                     <input type="text" class="form-control"  id="timepicker1" name="name" required="" data-form-field="Name" th:field="*{interviewTime}"/>
-                                    
+                                     <div class="input-group bootstrap-timepicker timepicker">
+            <input id="timepicker1" type="text" class="form-control input-small"/>
             <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-
+        </div>
+                                     <script type="text/javascript">
+            $('#timepicker1').timepicker();
+        </script>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control"  id="timepicker1" name="name" required="" data-form-field="Name" th:field="*{interviewTime}"/>
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                    </div>
                                 </div>
                             </div>
                  </div>
