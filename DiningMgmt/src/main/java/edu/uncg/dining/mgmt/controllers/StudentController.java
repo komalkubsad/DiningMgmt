@@ -32,6 +32,16 @@ public class StudentController {
     @PostMapping("/student")
     public String save(Student student){
                 System.out.println("Saving...");
+                
+                Student existingStudent=studentRepo.findByUsername(student.getUsername());
+                Student existingStudentWithId = studentRepo.findOne(student.getStudentId());
+                User existingUser=userRepository.findByUsernameAndPassword(student.getUsername(), student.getPassword());
+                
+                if(existingStudent!=null || existingUser!=null || existingStudentWithId!=null){
+                    return "failure";
+                }
+                
+                
                 studentRepo.save(student);
                 User user = new User();
          user.setUsername(student.getUsername());
