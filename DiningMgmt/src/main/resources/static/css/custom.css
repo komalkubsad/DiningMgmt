@@ -22,7 +22,7 @@ h1 {
 }
 
 .hideMe {
-    display: none;
+    display: none !important;
 }
 
 .tagline-upper {

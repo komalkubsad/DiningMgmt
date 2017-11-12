@@ -32,12 +32,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
         <script type="text/javascript" src="javascripts/bootstrap-timepicker.js"></script>
 
-    
-     
-     <script type="text/javascript">
+
+
+        <script type="text/javascript">
             $(function () {
                 $('#sandbox-container input').datepicker({
-                }); 
+                });
 
                 $('#timepicker1').timepicker();
                 $('#timepicker2').timepicker();
@@ -45,35 +45,30 @@
 
             });
         </script>
-</head>
-<body>
+    </head>
+    <body>
 
-                <form role="form" th:action="@{/shifts}" th:object="${shifts}" th:method="post">
-    <div th:include="fragments/supervisor_header::supervisor_head"></div>
-<div class="bg-faded p-4 my-4">
-        <div class="container">
+        <form role="form" th:action="@{/shifts}" th:object="${shifts}" th:method="post">
+            <div th:include="fragments/supervisor_header::supervisor_head"></div>
+            <div class="bg-faded p-4 my-4">
+                <div class="container">
 
-          <div class="col-xs-12 text-xs-center">
-                    <h3 class="mbr-section-title display-2">SHIFTS</h3>
-                    <small class="mbr-section-subtitle"></small>
-                </div>
-                <div class="row row-sm-offset">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="form1-4-name">Employee Id<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{employeeId}"/>
-                                </div>
+                    <div class="col-xs-12 text-xs-center">
+                        <h3 class="mbr-section-title display-2">SHIFTS</h3>
+                        <small class="mbr-section-subtitle"></small>
+                    </div>
+                    <div class="row row-sm-offset">
+
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="form-control-label" for="form1-4-name">Employee Id<span class="form-asterisk">*</span></label>
+                                <select class="form-control" th:field="*{employeeId}">
+                                    <option th:each="employee : ${employees}" th:value="${employee}" th:text="${employee}"></option>
+                                </select>
                             </div>
-                </div>
-                 <div class="row row-sm-offset">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="form1-4-name">Employee Name<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{employeeName}"/>
-                                </div>
-                            </div>
-                 </div>
-                 <div class="row row-sm-offset">
+                        </div>
+                    </div>
+                    <div class="row row-sm-offset">
                         <div class="col-xs-12">
                             <div class="form-group bootstrap-timepicker timepicker">
                                 <label class="form-control-label" for="form1-4-name">Check-in<span class="form-asterisk">*</span></label>
@@ -88,7 +83,7 @@
                             </div>
                         </div>
                     </div>
-                 <div class="row row-sm-offset">
+                    <div class="row row-sm-offset">
                         <div class="col-xs-12">
                             <div class="form-group bootstrap-timepicker timepicker">
                                 <label class="form-control-label" for="form1-4-name">Check out<span class="form-asterisk">*</span></label>
@@ -103,7 +98,7 @@
                             </div>
                         </div>
                     </div>
-            <div class="row row-sm-offset">
+                    <div class="row row-sm-offset">
                         <div class="col-xs-12">
                             <div class="form-group bootstrap-timepicker timepicker">
                                 <label class="form-control-label" for="form1-4-name">Break Time<span class="form-asterisk">*</span></label>
@@ -118,42 +113,42 @@
                             </div>
                         </div>
                     </div>
-            
-            <div class="row row-sm-offset">
-                            <div class="col-xs-12">
-                                <div class="form-group" id="sandbox-container">
-                                    <label class="form-control-label" for="form1-4-name">Date<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{date}"/>
-                                </div>
+
+                    <div class="row row-sm-offset">
+                        <div class="col-xs-12">
+                            <div class="form-group" id="sandbox-container">
+                                <label class="form-control-label" for="form1-4-name">Date<span class="form-asterisk">*</span></label>
+                                <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{date}"/>
                             </div>
-                 </div>
-            
-            <div class="row row-sm-offset">
-
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                  
-                                   <button type="submit" class="btn btn-primary"><span class="btn-text">SUBMIT</span><i class="btn-loader"></i></button>
-                                </div>
-                            </div>
-
-                            
-
-                            
-
                         </div>
-            
-                            
+                    </div>
 
-                            
+                    <div class="row row-sm-offset">
 
-        </div>
-</div> 
-                </form>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+
+                                <button type="submit" class="btn btn-primary"><span class="btn-text">SUBMIT</span><i class="btn-loader"></i></button>
+                            </div>
+                        </div>
 
 
 
 
 
-  </body>
+                    </div>
+
+
+
+
+
+                </div>
+            </div> 
+        </form>
+
+
+
+
+
+    </body>
 </html>

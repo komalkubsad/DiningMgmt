@@ -23,8 +23,7 @@ public class Shifts {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     private long shiftId;
-    private long employeeId;
-    private String employeeName;
+    private String employeeId;
     private String checkIn;
     private String checkOut;
     private String breakTime;
@@ -39,20 +38,12 @@ public class Shifts {
         this.shiftId = shiftId;
     }
 
-    public long getEmployeeId() {
+    public String getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(long employeeId) {
+    public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
-    }
-
-    public String getEmployeeName() {
-        return employeeName;
-    }
-
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
     }
 
     public String getCheckIn() {

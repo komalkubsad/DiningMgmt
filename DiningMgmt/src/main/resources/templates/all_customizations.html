@@ -19,16 +19,15 @@
         <link href="css/custom.css" rel="stylesheet"/>
 
     </head>
-    <body>
+<body>
 
-        <form role="form" th:action="@{/employee}" th:object="${employees}" th:method="get">
-
+        
             <!-- Navigation -->
-            <div th:include="fragments/manager_header::manager_head"></div>
+            <div th:include="fragments/supervisor_header::supervisor_head"></div>
             <div class="bg-faded p-4 my-4">
                 <div class="container">
                     <div class="col-xs-12 text-xs-center">
-                        <h3 class="mbr-section-title display-4">EMPLOYEES</h3>
+                        <h3 class="mbr-section-title display-4">CUSTOMIZATIONS</h3>
                         <small class="mbr-section-subtitle"></small>
                     </div>
 
@@ -41,30 +40,26 @@
                                 
                                 
                      <table class="table table-bordered table-striped">
+           
     <thead>
-        <thead>
       <tr>
-          <th>employeeId</th>
-          <th>employeeName</th>
-        <th>address</th>
-        <th>contact</th>
-        <th>email</th>
-        <th>dateOfJoining</th>
-             
+          <th>customID</th>
+        <th>studentId</th>
+        <th>studentName</th>
+        <th>item</th>
+        <th>dayOfSpecial</th>
+        
       </tr>
-    </thead>
-     
     </thead>
     <tbody>
       
        
-        <tr th:each="employee :${employees}">
-        <td th:text="${employee.employeeId}"/>
-         <td th:text="${employee.employeeName}"/>
-         <td th:text="${employee.address}"/>
-         <td th:text="${employee.contact}"/>
-        <td th:text="${employee.email}"/>
-          <td th:text="${#dates.format(employee.dateOfJoining,'MM-dd-yyyy')}"/>
+        <tr th:each="customize :${customized}">
+        <td th:text="${customize.customID}"/>
+         <td th:text="${customize.studentId}"/>
+         <td th:text="${customize.studentName}"/>
+         <td th:text="${customize.item}"/>
+         <td th:text="${customize.dayOfSpecial}"/>
         
      
       </tr>
@@ -74,25 +69,12 @@
                      </div>
                     
                     
-                    <div class="row row-sm-offset">
-
-                        <div class="col-xs-12">
-                            <div class="form-group">
-
-                                <button type="submit" class="btn btn-primary"><span class="btn-text">Add Employee</span><i class="btn-loader"></i></button>
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div>
+                   
 
 
                 </div>
             </div>
-        </form>
+        
         <div th:include="fragments/footer::foot"></div>
     </body>
 </html>

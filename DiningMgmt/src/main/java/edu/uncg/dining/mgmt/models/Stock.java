@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -24,6 +25,7 @@ public class Stock {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     private long itemId;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
     private String item;
     private String quantity;

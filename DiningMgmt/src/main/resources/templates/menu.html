@@ -95,23 +95,6 @@
                                 </div>
                             </div>
                         </div>
-            <div class="row row-sm-offset">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="form1-4-name">Day<span class="form-asterisk">*</span></label>
-                                    <select class="form-control" required="" th:field="*{day}">
-                                    <option value="">Select Day</option>
-                                    <option value="Monday">Monday</option>
-                                    <option value="Tuesday">Tuesday</option>
-                                    <option value="Wednesday">Wednesday</option>
-                                    <option value="Thursday">Thursday</option>
-                                    <option value="Friday">Friday</option>
-                                    <option value="Saturday">Saturday</option>
-                                    <option value="Sunday">Sunday</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
             
               <div class="row row-sm-offset">
                             <div class="col-xs-12">
@@ -126,7 +109,7 @@
                             </div>
                         </div>
             
-            <div id="breakfast1" class=" row row-sm-offset">
+            <div id="breakfast1" class="row row-sm-offset">
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 1<span class="form-asterisk">*</span></label>
@@ -138,11 +121,11 @@
                                 </div>
                             </div>
                         </div>
-             <div id="lunch1" class=" row row-sm-offset hideMe">
+             <div id="lunch1" class="row row-sm-offset hideMe">
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 1<span class="form-asterisk">*</span></label>
-                                    <select id="lunch1select" class="form-control" th:field="*{item1}">
+                                    <select id="lunch1select" class="form-control" disabled="disabled" th:field="*{item1}">
                                     <option value="Cheese Pizza">Cheese Pizza</option>
                                     <option value="Taco">Taco</option>
                                     <option value="Chicken Sandwich">Chicken Sandwich</option>
@@ -155,7 +138,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 1<span class="form-asterisk">*</span></label>
-                                    <select id="dinner1select" class="form-control" th:field="*{item1}">
+                                    <select id="dinner1select" class="form-control" disabled="disabled" th:field="*{item1}">
                                     <option value="Rice n Beans">Rice n Beans</option>
                                     <option value="Fried Rice">Fried Rice</option>
                                     <option value="Chicken Chilli">Chicken Chilli</option>
@@ -169,7 +152,7 @@
             
             
             
-             <div id="breakfast2" class=" row row-sm-offset">
+             <div id="breakfast2" class=" row row-sm-offset ">
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 2<span class="form-asterisk">*</span></label>
@@ -185,7 +168,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 2<span class="form-asterisk">*</span></label>
-                                    <select id="lunch2select" class="form-control" th:field="*{item2}">
+                                    <select id="lunch2select" class="form-control" disabled="disabled" th:field="*{item2}">
                                     <option value="Soup">Soup</option>
                                     <option value="Pasta">Pasta</option>
                                     <option value="Chicken Sandwich">Chicken Sandwich</option>
@@ -198,7 +181,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 2<span class="form-asterisk">*</span></label>
-                                    <select id="dinner2select" class="form-control" th:field="*{item2}">
+                                    <select id="dinner2select" disabled="disabled" class="form-control" th:field="*{item2}">
                                     <option value="Spagetti and bacon strips">Spagetti and bacon strips</option>
                                     <option value="Veggie Quesdilla">Veggie Quesdilla</option>
                                     <option value="Chicken Chilli">Chicken Chilli</option>
@@ -214,7 +197,7 @@
                                     <label class="form-control-label" for="form1-4-name">Item 3<span class="form-asterisk">*</span></label>
                                     <select id="breakfast3select" class="form-control" th:field="*{item3}">
                                     <option value="Eggs">Eggs</option>
-                                    <option value="Oatmeal">Oatmeale</option>
+                                    <option value="Oatmeal">Oatmeal</option>
                                     <option value="Fruit Juice">Fruit Juice</option>
                                     </select>
                                 </div>
@@ -224,7 +207,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 3<span class="form-asterisk">*</span></label>
-                                    <select id="lunch2select" class="form-control" th:field="*{item3}">
+                                    <select id="lunch2select" disabled="disabled" class="form-control" th:field="*{item3}">
                                     <option value="Salad">Salad</option>
                                     <option value="Ceasar Salad">Ceasar Salad</option>
                                     <option value="Chicken Salad">Chicken Salad</option>
@@ -237,7 +220,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 3<span class="form-asterisk">*</span></label>
-                                    <select id="dinner2select" class="form-control" th:field="*{item3}">
+                                    <select id="dinner2select" disabled="disabled" class="form-control" th:field="*{item3}">
                                     <option value="Brocolli Noodle">Brocolli Noodle</option>
                                     <option value="Peporini Pizza">Peporini Pizza</option>
                                     <option value="Veggie Pizza">Veggie Pizza</option>
@@ -262,7 +245,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 4<span class="form-asterisk">*</span></label>
-                                    <select id="lunch4select" class="form-control" th:field="*{item4}">
+                                    <select id="lunch4select" disabled="disabled" class="form-control" th:field="*{item4}">
                                     <option value="Breadsticks">Breadsticks</option>
                                     <option value="Garlic Bread">Garlic Bread</option>
                                     <option value="Cinnamon sticks">Cinnamon Sticks</option>
@@ -275,7 +258,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 4<span class="form-asterisk">*</span></label>
-                                    <select id="dinner4select" class="form-control" th:field="*{item4}">
+                                    <select id="dinner4select" disabled="disabled" class="form-control" th:field="*{item4}">
                                     <option value="Milkshake">Milkshake</option>
                                     <option value="Burrito Bowl">Burrito Bowl</option>
                                     <option value="Mozarella Sandwich">Mozarella Sandwich</option>
@@ -283,11 +266,11 @@
                                 </div>
                             </div>
                         </div>
-            <div id="breakfast5" class=" row row-sm-offset">
+            <div id="breakfast5" class=" row row-sm-offset ">
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 5<span class="form-asterisk">*</span></label>
-                                    <select id="breakfast5select" class="form-control" th:field="*{item5}">
+                                    <select id="breakfast5select"  class="form-control" th:field="*{item5}">
                                     <option value="Pancakes">Pancakes</option>
                                     <option value="Scrambled Eggs">Scrambled Egg</option>
                                     <option value="French Toast">French Toast</option>
@@ -299,7 +282,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 5<span class="form-asterisk">*</span></label>
-                                    <select id="lunch5select" class="form-control" th:field="*{item5}">
+                                    <select id="lunch5select" disabled="disabled" class="form-control" th:field="*{item5}">
                                     <option value="Chicken Noodle Soup">Chicken Noodle Soup</option>
                                     <option value="Garlic rice">Garlic Rice</option>
                                     <option value="Guacamole and chips">Guacamole and chips</option>
@@ -312,7 +295,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item 5<span class="form-asterisk">*</span></label>
-                                    <select id="dinner5select" class="form-control" th:field="*{item5}">
+                                    <select id="dinner5select" disabled="disabled" class="form-control" th:field="*{item5}">
                                     <option value="Mac and cheese">Mac and cheese</option>
                                     <option value="Chicken nuggets">Chicken nuggets</option>
                                     <option value="Steak Burger">Steak Burger</option>

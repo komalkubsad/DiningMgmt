@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -26,6 +27,8 @@ public class Employee {
     private String address;
     private String contact;
     private String email;
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfJoining;
 
     public Date getDateOfJoining() {

@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -23,8 +24,9 @@ public class Menu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long dayId;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
-    private String day;
+    
     private String item1;
     private String item2;
     private String item3;
@@ -55,14 +57,6 @@ public class Menu {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public String getDay() {
-        return day;
-    }
-
-    public void setDay(String day) {
-        this.day = day;
     }
 
     public String getItem1() {

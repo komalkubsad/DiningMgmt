@@ -5,13 +5,17 @@
  */
 package edu.uncg.dining.mgmt.controllers;
 
+import edu.uncg.dining.mgmt.models.Employee;
 import edu.uncg.dining.mgmt.models.Shifts;
+import edu.uncg.dining.mgmt.repositories.EmployeeRepository;
 import edu.uncg.dining.mgmt.repositories.ShiftsRepository;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -24,6 +28,9 @@ public class ShiftsController {
   
     @Autowired
     private ShiftsRepository shiftsRepo;
+    
+    @Autowired
+    private EmployeeRepository employeeRepository;
     
     @PostMapping("/shifts")
     public String save(Shifts shifts){
@@ -51,5 +58,15 @@ public class ShiftsController {
         final List<Shifts> allShiftss = shiftsRepo.findAll();
         model.addAttribute("shiftss",allShiftss);
         return "supervisor_home";
+    }
+    
+    @ModelAttribute("employees")
+    public List<String> getAllEmployees(){
+       List<String> emp = new ArrayList<>();
+              List<Employee> allEmployees=  employeeRepository.findAll();
+              for(Employee employee:allEmployees){
+                  emp.add(employee.getEmployeeId() +":"+employee.getEmployeeName());
+              }
+              return emp;
     }
 }

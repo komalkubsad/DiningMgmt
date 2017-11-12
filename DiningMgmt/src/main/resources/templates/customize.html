@@ -36,7 +36,8 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Student Id<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{studentId}"/>
+                                    <input type="text" class="form-control" name="name" disabled="disabled" required="" data-form-field="Name" th:value="*{studentId}"/>
+                                    <input type="hidden" th:field="*{studentId}" />
                                 </div>
                             </div>
                         </div>
@@ -44,7 +45,8 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Student Name<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{studentName}"/>
+                                    <input type="text" class="form-control" name="name" disabled="disabled" required="" data-form-field="Name" th:value="*{studentName}"/>
+                                    <input type="hidden" th:field="*{studentName}" />
                                 </div>
                             </div>
                         </div>
@@ -52,7 +54,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label class="form-control-label" for="form1-4-name">Item<span class="form-asterisk">*</span></label>
-                                    <select id="dinner5select" class="form-control" th:field="*{dayOfSpecial}">
+                                    <select id="dinner5select" class="form-control" th:field="*{item}">
                                     <option value="Cereal and milk">Cereal and milk</option>
                                     <option value="Omlete">Omlete</option>
                                     <option value="Veggie Sub">Veggie Sub</option>

@@ -21,15 +21,10 @@ import javax.persistence.Transient;
 @Table (name = "student")
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private long studentId;
     private String studentName;
     private String mealPlan;
     private Date startDate;
-
-    @Transient
-
     private String username;
     @Transient
     private String password;

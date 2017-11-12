@@ -5,6 +5,9 @@
  */
 package edu.uncg.dining.mgmt;
 
+import edu.uncg.dining.mgmt.models.Student;
+import edu.uncg.dining.mgmt.models.User;
+import edu.uncg.dining.mgmt.repositories.StudentRepository;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +32,12 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
+    @Autowired
+	private CustomAuthProvider authProvider;
+    
+    @Autowired
+    private StudentRepository studentRepository;
+    
     
     private RedirectStrategy redirectStrategy=new DefaultRedirectStrategy();
     
@@ -45,12 +54,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(new AuthenticationSuccessHandler() {
             @Override
             public void onAuthenticationSuccess(HttpServletRequest hsr, HttpServletResponse hsr1, Authentication a) throws IOException, ServletException {
-                if(a.getAuthorities().toString().contains("ROLE_manager")){
+                User user=(User) a.getPrincipal();
+                String userType= user.getUsertype();
+                if(userType.equalsIgnoreCase("manager")){
                     redirectStrategy.sendRedirect(hsr, hsr1, "/employees");
-                } else if(a.getAuthorities().toString().contains("ROLE_supervisor")){
+                } else if(userType.equalsIgnoreCase("supervisor")){
                     redirectStrategy.sendRedirect(hsr, hsr1, "/shiftss");
                 } else{
-                    redirectStrategy.sendRedirect(hsr, hsr1, "/customized");
+                    Student student=studentRepository.findByUsername(user.getUsername());
+                    redirectStrategy.sendRedirect(hsr, hsr1, "/customized/"+student.getStudentId());
                 }  
             }
         })
@@ -63,13 +75,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
     
     
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        
-        auth.inMemoryAuthentication()
-                .withUser("manager").password("manager123").roles("manager").and()
-                .withUser("supervisor").password("supervisor123").roles("supervisor").and()
-                .withUser("student").password("student123").roles("student");
-        
-    }
+    @Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+ 		auth.authenticationProvider(authProvider);
+	}
 }

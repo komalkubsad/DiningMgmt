@@ -6,6 +6,8 @@
 package edu.uncg.dining.mgmt.repositories;
 
 import edu.uncg.dining.mgmt.models.Customize;
+import java.math.BigInteger;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -13,5 +15,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author shrav
  */
 public interface CustomizeRepository extends JpaRepository<Customize, Long>{
+
+    public List<Customize> findByStudentId(Long l);
     
 }
