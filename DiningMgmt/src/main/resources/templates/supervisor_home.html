@@ -46,11 +46,11 @@
           
           
     
-          <th>ShiftId</th>
-        <th>Employee</th>
-        <th>CheckIn</th>
-        <th>CheckOut</th>
-        <th>BreakTime</th>
+          
+        <th>Employee ID</th>
+        <th>Check-In</th>
+        <th>Check-Out</th>
+        <th>Break Time</th>
         <th>Date</th>
       </tr>
     </thead>
@@ -58,7 +58,6 @@
       
        
         <tr th:each="shifts :${shiftss}">
-        <td th:text="${shifts.shiftId}"/>
         <td th:text="${shifts.employeeId}"/>
          <td th:text="${shifts.checkIn}"/>
          <td th:text="${shifts.checkOut}"/>

@@ -44,17 +44,16 @@
                         
     <thead>
       <tr>
-        <th>PayrollId</th>
-          <th>EmployeeName</th>
-        <th>PayPerHour</th>
-        <th>WorkingHours</th> 
-    <th>TotalPay</th>
+        
+          <th>Employee Name</th>
+        <th>Pay Per Hour</th>
+        <th>Working Hours</th> 
+    <th>Total Pay</th>
              <th>Status</th>
     <tbody>
       
        
         <tr th:each="payroll :${payrolls}">
-            <td th:text="${payroll.payrollId}"/>
          <td th:text="${payroll.employeeName}"/>
          <td th:text="${payroll.payPerHour}"/>
          <td th:text="${payroll.workingHours}"/>

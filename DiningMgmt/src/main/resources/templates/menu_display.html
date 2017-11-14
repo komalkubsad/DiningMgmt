@@ -44,21 +44,19 @@
                         
     <thead>
       <tr>
-          <th>DayId</th>
           <th>Date</th>
         <th>Item 1</th>
         <th>Item 2</th>
              <th>Item 3</th>
              <th>Item 4</th>
              <th>Item 5</th>
-              <th>TypeOfMeal</th>
+              <th>Type Of Meal</th>
       </tr>
     </thead>
     <tbody>
       
        
         <tr th:each="menu :${menus}">
-        <td th:text="${menu.dayId}"/>
         <td th:text="${#dates.format(menu.date,'MM-dd-yyyy')}"/>
          <td th:text="${menu.item1}"/>
          <td th:text="${menu.item2}"/>

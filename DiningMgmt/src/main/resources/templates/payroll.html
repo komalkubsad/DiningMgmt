@@ -34,7 +34,7 @@
             var pay = $("#pay").val();
             if((hrs!='')&&(pay!='')){
                   total =parseInt(hrs)*parseInt(pay);
-                 $("#totalPay").val(total + "$");
+                 $("#totalPay").val("$"+ total );
              }
          }
             
@@ -61,13 +61,16 @@
                     <small class="mbr-section-subtitle"></small>
           </div>
             <div class="row row-sm-offset">
-                            <div class="col-xs-12">
-                                <div class="form-group">
-                                    <label class="form-control-label" for="form1-4-name">Name<span class="form-asterisk">*</span></label>
-                                    <input type="text" class="form-control" name="name" required="" data-form-field="Name" th:field="*{employeeName}"/>
-                                </div>
+
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label class="form-control-label" for="form1-4-name">Employee Id<span class="form-asterisk">*</span></label>
+                                <select class="form-control" th:field="*{employeeName}">
+                                    <option th:each="employee : ${employees}" th:value="${employee}" th:text="${employee}"></option>
+                                </select>
                             </div>
                         </div>
+                    </div>
                 
                  <div class="row row-sm-offset">
                             <div class="col-xs-12">

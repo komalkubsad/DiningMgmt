@@ -7,12 +7,15 @@ package edu.uncg.dining.mgmt.controllers;
 
 import edu.uncg.dining.mgmt.models.Employee;
 import edu.uncg.dining.mgmt.models.Payroll;
+import edu.uncg.dining.mgmt.repositories.EmployeeRepository;
 import edu.uncg.dining.mgmt.repositories.PayrollRepository;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -24,6 +27,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class PayrollController {
     @Autowired
     private PayrollRepository payrollRepo;
+    
+    @Autowired
+    private EmployeeRepository employeeRepository;
+    
+   
     
     @PostMapping("/payroll")
     public String save(Payroll payroll){
@@ -51,4 +59,15 @@ public class PayrollController {
         model.addAttribute("payrolls",allPayrolls);
         return "payroll_display";
 }
-}
+    
+     @ModelAttribute("employees")
+    public List<String> getAllEmployees(){
+       List<String> emp = new ArrayList<>();
+              List<Employee> allEmployees=  employeeRepository.findAll();
+              for(Employee employee:allEmployees){
+                  emp.add(employee.getEmployeeId() +":"+employee.getEmployeeName());
+              }
+              return emp;
+    }
+    
+    }

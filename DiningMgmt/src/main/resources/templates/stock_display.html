@@ -44,10 +44,9 @@
                         
     <thead>
       <tr>
-          <th>itemId</th>
-          <th>date</th>
-        <th>item</th>
-        <th>quantity</th>
+          <th>Date</th>
+        <th>Item</th>
+        <th>Quantity</th>
       </tr>
     </thead>
     <tbody>
@@ -55,7 +54,6 @@
      
        
         <tr th:each="stock :${stocks}">
-        <td th:text="${stock.itemId}"/>
          <td th:text="${#dates.format(stock.date,'MM-dd-yyyy')}"/>
         
          <td th:text="${stock.item}"/>
